@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
+import ThemeProvider from "@/components/providers/theme-provider";
 
-const rubik = Rubik({ subsets: ["latin"] });
+export const rubik = localFont({
+  src: "../public/assets/fonts/Rubik-VariableFont_wght.ttf",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Frontend Quizz App",
@@ -16,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={rubik.className}>{children}</body>
+      <body className={rubik.className}>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
