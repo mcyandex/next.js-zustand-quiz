@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       screens: {
-        "xs": "300px",
+        xs: "300px",
         "2xl": "1440px",
       },
 
@@ -18,6 +18,15 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+
+        "pattern-light-desktop":
+          "url('/assets/images/pattern-background-desktop-light.svg')",
+        "pattern-dark-desktop":
+          "url('/assets/images/pattern-background-desktop-dark.svg')",
+        "pattern-light-mobile":
+          "url('/assets/images/pattern-background-mobile-light.svg')",
+        "pattern-dark-mobile":
+          "url('/assets/images/pattern-background-mobile-dark.svg')",
       },
       colors: {
         "light-blue": "#ABC1E1",

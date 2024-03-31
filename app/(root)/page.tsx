@@ -5,7 +5,7 @@ import { getSubjects } from "@/lib/actions/getSubjects";
 export default async function Home() {
   const subjects = await getSubjects();
   return (
-    <MaxWidthWrapper className="grid px-10 grid-cols-1 md:grid-cols-2 gap-10 lg:px-0 relative z-50">
+    <MaxWidthWrapper className="grid px-8 grid-cols-1 md:grid-cols-2 gap-10 lg:px-0 relative z-50 h-full">
       <div className="flex flex-col xs:gap-4 md:gap-10">
         <h1 className="xs:text-3xl md:text-5xl font-normal text-dark-blue dark:text-white">
           Welcome to the <span className="font-bold">Frontend Quizz!</span>
