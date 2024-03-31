@@ -3,7 +3,7 @@ import SwitchTheme from './switch-theme'
 
 const Header = () => {
   return (
-    <div className='mb-10'>
+    <div >
       <SwitchTheme />
     </div>
   )
