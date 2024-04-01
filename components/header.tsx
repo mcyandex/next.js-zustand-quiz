@@ -3,7 +3,7 @@ import SwitchTheme from './switch-theme'
 
 const Header = () => {
   return (
-    <div >
+    <div className='relative z-10' >
       <SwitchTheme />
     </div>
   )
