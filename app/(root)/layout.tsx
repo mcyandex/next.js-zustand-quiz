@@ -4,7 +4,7 @@ import MaxWidthWrapper from "@/components/max-width-wrapper";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="bg-white dark:bg-dark-blue xs:py-10 md:py-12 w-full h-full transition relative">
+    <div className="bg-white dark:bg-dark-blue xs:py-10 md:py-12 w-full h-full min-h-screen transition relative">
       {/* BACKGROUND PATTERN  */}
       <ImageBackground />
       <MaxWidthWrapper className="flex justify-end xs:mb-10 lg:mb-2 xs:px-5 md:px-0">
