@@ -6,9 +6,7 @@ import { useQuestionStore } from "@/store/quiz-store";
 import { useEffect } from "react";
 
 export default function Home() {
-  const fetchQuizzes = useQuestionStore((state) => state.fetchQuizzes);
-  const quizzes = useQuestionStore((state) => state.quizzes);
-  const selectedQuizz = useQuestionStore((state) => state.selectedQuizz);
+  const { fetchQuizzes, quizzes, selectedQuizz } = useQuestionStore();
 
   useEffect(() => {
     fetchQuizzes();
