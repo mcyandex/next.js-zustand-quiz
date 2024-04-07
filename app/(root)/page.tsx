@@ -1,5 +1,5 @@
 "use client";
-import Questions from "@/components/questions";
+import Game from "@/components/game";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 import Subjects from "@/components/subjects";
 import { useQuestionStore } from "@/store/quiz-store";
@@ -9,7 +9,7 @@ export default function Home() {
   const fetchQuizzes = useQuestionStore((state) => state.fetchQuizzes);
   const quizzes = useQuestionStore((state) => state.quizzes);
   const selectedQuizz = useQuestionStore((state) => state.selectedQuizz);
-  const questions = useQuestionStore((state) => state.questions);
+
   useEffect(() => {
     fetchQuizzes();
   }, []);
@@ -31,11 +31,7 @@ export default function Home() {
           </div>
         </>
       )}
-      {selectedQuizz && (
-        <div className="flex flex-col xs:gap-4 md:gap-10">
-          <Questions data={questions} />
-        </div>
-      )}
+      {selectedQuizz && <Game />}
     </MaxWidthWrapper>
   );
 }
