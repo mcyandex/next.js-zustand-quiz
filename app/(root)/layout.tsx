@@ -11,7 +11,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <Header />
       </MaxWidthWrapper>
 
-      <main className="h-full">{children}</main>
+      <main>{children}</main>
     </div>
   );
 };

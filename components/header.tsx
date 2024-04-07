@@ -14,7 +14,7 @@ const Header = () => {
       )}
     >
       {selectedQuizz && (
-        <div className="flex gap-x-4 items-center px-6 py-4">
+        <div className="flex gap-x-4 items-center sm:px-6 sm:py-4">
           {" "}
           <div
             className="p-2 rounded-lg"
@@ -27,7 +27,7 @@ const Header = () => {
               height={30}
             />
           </div>
-          <p className="text-dark-blue dark:text-light-blue font-bold text-xl">
+          <p className="text-dark-blue dark:text-light-blue font-bold xs:text-sm sm:text-xl">
             {selectedQuizz.title}
           </p>
         </div>

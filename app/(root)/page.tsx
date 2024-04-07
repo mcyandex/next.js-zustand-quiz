@@ -1,5 +1,5 @@
 "use client";
-import Questions from "@/components/Questions";
+import Questions from "@/components/questions";
 import MaxWidthWrapper from "@/components/max-width-wrapper";
 import Subjects from "@/components/subjects";
 import { useQuestionStore } from "@/store/quiz-store";
