@@ -7,11 +7,11 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
     <div className="bg-white dark:bg-dark-blue xs:py-10 md:py-12 w-full h-full transition relative">
       {/* BACKGROUND PATTERN  */}
       <ImageBackground />
-      <MaxWidthWrapper className="flex justify-end xs:mb-10 lg:mb-12 xs:px-5 md:px-0">
+      <MaxWidthWrapper className="flex justify-end xs:mb-10 lg:mb-2 xs:px-5 md:px-0">
         <Header />
       </MaxWidthWrapper>
 
-      <main>{children}</main>
+      <main className="h-full flex items-center justify-center">{children}</main>
     </div>
   );
 };

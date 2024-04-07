@@ -13,7 +13,7 @@ export default function Home() {
   }, []);
 
   return (
-    <MaxWidthWrapper className="grid px-6 grid-cols-1 md:grid-cols-2 gap-10 lg:px-0 relative z-50 h-full">
+    <MaxWidthWrapper className="grid px-6 grid-cols-1 md:grid-cols-2 gap-10 lg:px-0 relative z-50 h-full place-content-center">
       {!selectedQuizz && (
         <>
           <div className="flex flex-col xs:gap-4 md:gap-10">
