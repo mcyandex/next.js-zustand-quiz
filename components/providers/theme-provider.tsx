@@ -10,7 +10,7 @@ interface ThemeProviderProps {
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const { darkMode } = useThemeStore();
   return (
-    <div className={`${darkMode ? "dark" : ""} w-full xs:min-h-screen lg:h-full`}>
+    <div className={`${darkMode ? "dark" : ""} w-full h-full`}>
       {children}
     </div>
   );
