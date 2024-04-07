@@ -8,9 +8,8 @@ const Answers = ({ data, handleAnswer, questionId }: AnswersProps) => {
   return (
     <ul className="flex flex-col gap-y-4 justify-center w-full">
       {data.map((answer, index) => (
-        <li>
+        <li key={answer}>
           <button
-            key={answer}
             onClick={() => handleAnswer(questionId, answer)}
             className="w-full flex items-center gap-x-4 group bg-[#fff] dark:bg-slate py-4 px-5 rounded-xl shadow-lg  ring-1 hover:ring-purple transition-all font-semibold text-sm text-dark-blue dark:text-white text-center"
           >
@@ -18,7 +17,6 @@ const Answers = ({ data, handleAnswer, questionId }: AnswersProps) => {
               {answerLabels[index]}
             </span>
             <span>{answer}</span>
-            
           </button>
         </li>
       ))}
