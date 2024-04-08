@@ -7,7 +7,7 @@ const CurrentQuestion = ({data}: QuestionsProps) => {
 
   return (
     <div>
-      <h2 className="text-dark-blue dark:text-white text-[36px] font-bold">
+      <h2 className="text-dark-blue dark:text-white xs:text-xl md:text-2xl lg:text-4xl font-bold">
         {data.question}
       </h2>
     </div>

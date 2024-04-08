@@ -6,10 +6,10 @@ interface State {
   quizzes: Quizz[];
   questions: Question[];
   selectedQuizz: Quizz | null;
-  selectQuizz: (quizz: Quizz) => void;
   currentQuestion: number;
   hasCompleteAll: boolean;
   hasWin: boolean;
+  selectQuizz: (quizz: Quizz) => void;
   fetchQuizzes: () => Promise<void>;
   selectAnswer: (questionId: number, selectedAnswer: string) => void;
   goNextQuestion: () => void;

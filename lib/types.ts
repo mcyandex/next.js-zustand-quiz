@@ -3,7 +3,7 @@ export interface Question {
   question: string;
   options: string[];
   answer: string;
-  isCorrectUserAnswer?: boolean;
+  isCorrectUserAnswer?: boolean | null;
   userSelectedAnswer?: string | null;
 }
 
