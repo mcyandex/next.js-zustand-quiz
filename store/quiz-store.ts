@@ -8,14 +8,13 @@ interface State {
   selectedQuizz: Quizz | null;
   currentQuestion: number;
   hasCompleteAll: boolean;
-  hasWin: boolean;
+  score: number;
   selectQuizz: (quizz: Quizz) => void;
   fetchQuizzes: () => Promise<void>;
   selectAnswer: (questionId: number, selectedAnswer: string) => void;
   goNextQuestion: () => void;
   goPreviousQuestion: () => void;
   onCompleteQuestions: () => void;
-  setWinner: () => void;
   reset: () => void;
 }
 
@@ -30,19 +29,19 @@ export const useQuestionStore = create<State>()(
       return {
         quizzes: [],
         questions: [],
+        score: 0,
         selectedQuizz: null,
+        currentQuestion: 0,
+        hasCompleteAll: false,
         selectQuizz: (quizz: Quizz) => {
           set({ selectedQuizz: quizz, questions: quizz.questions });
         },
-        currentQuestion: 0,
-        hasWin: false,
-        hasCompleteAll: false,
         fetchQuizzes: async () => {
           try {
             const res = await fetch(`${API_URL}/data.json`);
             const json = await res.json();
             const quizzes = json.quizzes as Quizz[];
-            set({ quizzes, hasCompleteAll: false, hasWin: false }, false);
+            set({ quizzes, hasCompleteAll: false }, false);
           } catch (error) {
             console.log(error);
           }
@@ -73,12 +72,11 @@ export const useQuestionStore = create<State>()(
           set({ questions: newQuestions }, false);
         },
         onCompleteQuestions: () => {
-          set({ hasCompleteAll: true, currentQuestion: 0 });
-        },
-        setWinner: () => {
-          set({ hasWin: true });
-        },
+          const { questions } = get();
+          const score = questions.filter((q) => q.isCorrectUserAnswer).length;
 
+          set({ hasCompleteAll: true, currentQuestion: 0, score });
+        },
         goNextQuestion: () => {
           const { currentQuestion, questions } = get();
           const nextQuestion = currentQuestion + 1;
@@ -102,7 +100,7 @@ export const useQuestionStore = create<State>()(
               currentQuestion: 0,
               questions: [],
               hasCompleteAll: false,
-              hasWin: false,
+              selectedQuizz: null,
             },
             false
           );

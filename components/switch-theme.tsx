@@ -14,7 +14,7 @@ const SwitchTheme = () => {
   }, [darkMode]);
 
   return (
-    <div className="flex items-center gap-x-2">
+    <div className="flex items-center gap-x-2 md:pr-6 lg:p-0">
       <Image
         src={
           darkMode

@@ -17,17 +17,18 @@ const Header = () => {
         <div className="flex gap-x-4 items-center sm:px-6 sm:py-4">
           {" "}
           <div
-            className="p-2 rounded-lg"
+            className="xs:p-1 p-2 rounded-lg"
             style={{ backgroundColor: backgroundColors[selectedQuizz.title] }}
           >
             <Image
               src={selectedQuizz.icon}
-              alt="arrow"
+              alt="Icon"
               width={30}
               height={30}
+              className="xs:size-5"
             />
           </div>
-          <p className="text-dark-blue dark:text-light-blue font-bold xs:text-sm sm:text-xl">
+          <p className="text-dark-blue dark:text-white font-bold xs:text-lg sm:text-xl">
             {selectedQuizz.title}
           </p>
         </div>

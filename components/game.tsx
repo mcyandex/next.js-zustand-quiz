@@ -9,9 +9,11 @@ const Game = () => {
     useQuestionStore();
   const question = questions[currentQuestion];
 
+  
+
   return (
     <>
-      <div className="flex flex-col gap-2 lg:px-6 w-full max-h-96">
+      <div className="flex flex-col gap-2 lg:px-6 w-full max-h-96 lg:mt-16">
         <div className="flex flex-col gap-4">
           <p className="italic xs:text-sm md:text-md text-gray-navy dark:text-light-blue">
             Question {currentQuestion + 1} of {questions.length}

@@ -19,18 +19,13 @@ const Answers = ({
 }: AnswersProps) => {
   const [selectedAns, setSelectedAns] = useState("");
   const [submitted, setSubmitted] = useState<boolean>(false);
-  const { questions } = useQuestionStore();
+  const { questions, onCompleteQuestions } = useQuestionStore();
   const isCorrectUserAnswer = questions.find(
     (q) => q.id === questionId
   )?.isCorrectUserAnswer;
 
   const answerLabels = ["A", "B", "C", "D"];
-  console.log(!isCorrectUserAnswer);
 
-  const handleSubmitAns = () => {
-    handleAnswer(questionId, selectedAns);
-    setSubmitted(true);
-  };
   const handleSelectAnswer = (answer: string) => {
     if (submitted) return;
     if (selectedAns === answer) {
@@ -39,11 +34,23 @@ const Answers = ({
     }
     setSelectedAns(answer);
   };
-  const handleGoNextQuestion = () => {
-    goNextQuestion();
-    setSelectedAns("");
-    setSubmitted(false);
+
+  const handleSubmit = () => {
+    if (submitted) {
+      if (questions.every((q) => q.userSelectedAnswer != null)) {
+        onCompleteQuestions();
+        return
+      }
+      goNextQuestion();
+      setSelectedAns("");
+      setSubmitted(false);
+      return;
+    }
+    if (!selectedAns) return;
+    handleAnswer(questionId, selectedAns);
+    setSubmitted(true);
   };
+
   return (
     <>
       <ul className="flex flex-col gap-y-4 justify-center w-full">
@@ -55,8 +62,10 @@ const Answers = ({
                 selectedAns === answer && "ring-purple ring-1",
                 isCorrectUserAnswer && selectedAns === answer && "ring-green",
 
-                "w-full flex items-center gap-x-4 group bg-[#fff] dark:bg-slate py-4 px-5 rounded-xl shadow-lg hover:ring-purple transition-all font-semibold text-sm text-dark-blue dark:text-white text-center",
-                isCorrectUserAnswer === false && selectedAns === answer && "ring-red"
+                "w-full flex items-center gap-x-4 group bg-[#fff] dark:bg-slate py-4 px-5 rounded-xl shadow-lg hover:ring-1 hover:ring-purple transition-all font-semibold text-sm text-dark-blue dark:text-white text-center",
+                isCorrectUserAnswer === false &&
+                  selectedAns === answer &&
+                  "ring-red"
               )}
             >
               <span
@@ -65,7 +74,9 @@ const Answers = ({
                     ? "bg-purple text-white"
                     : "bg-white dark:text-dark-blue group-hover:text-purple group-hover:bg-[#F6E7FF] transition-all",
                   "text-lg rounded-lg py-2 px-4  ",
-                  isCorrectUserAnswer === false && selectedAns === answer && "bg-red",
+                  isCorrectUserAnswer === false &&
+                    selectedAns === answer &&
+                    "bg-red",
                   isCorrectUserAnswer && selectedAns === answer && "bg-green"
                 )}
               >
@@ -96,22 +107,13 @@ const Answers = ({
           </li>
         ))}
       </ul>
-      {!submitted && (
-        <button
-          onClick={handleSubmitAns}
-          className="w-full bg-purple py-4 px-5 rounded-xl shadow-lg text-white font-semibold text-lg text-center"
-        >
-          Submit Answer
-        </button>
-      )}
-      {submitted && (
-        <button
-          onClick={handleGoNextQuestion}
-          className="w-full bg-purple py-4 px-5 rounded-xl shadow-lg text-white font-semibold text-lg text-center"
-        >
-          Next Question
-        </button>
-      )}
+
+      <button
+        onClick={handleSubmit}
+        className="w-full bg-purple py-4 px-5 rounded-xl shadow-lg text-white font-semibold text-lg text-center"
+      >
+        {submitted ? "Next Question" : "Submit Answer"}
+      </button>
     </>
   );
 };
