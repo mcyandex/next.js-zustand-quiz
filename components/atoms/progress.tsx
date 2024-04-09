@@ -3,7 +3,7 @@ type ProgressProps = {
   total: number;
 };
 const Progress = ({ currentIndex, total }: ProgressProps) => {
-  const progressPercentage = ((currentIndex + 1) / total) * 100;
+  const progressPercentage = ((currentIndex) / total) * 100;
 
   return (
     <div className="w-full h-[5px] bg-[#fff] dark:bg-slate rounded-full">
