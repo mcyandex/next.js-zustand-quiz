@@ -3,11 +3,15 @@ import SwitchTheme from "../atoms/switch-theme";
 import { useQuestionStore } from "@/store/quiz-store";
 import { backgroundColors, cn } from "@/lib/utils";
 import Image from "next/image";
+import { MotionHeader } from "../animated/motion-header";
 
 const Header = () => {
   const selectedQuizz = useQuestionStore((state) => state.selectedQuizz);
   return (
-    <div
+    <MotionHeader
+    initial={{ opacity: 0, y: 10 }}
+    animate={{ opacity: 1, y: 0}}
+    transition={{ delay: 0.5}}	
       className={cn(
         selectedQuizz ? "flex justify-between w-full items-center" : "",
         "relative z-10"
@@ -34,7 +38,7 @@ const Header = () => {
         </div>
       )}
       <SwitchTheme />
-    </div>
+    </MotionHeader>
   );
 };
 
