@@ -1,8 +1,8 @@
 "use client";
 import { useQuestionStore } from "@/store/quiz-store";
-import CurrentQuestion from "./current-question";
+import CurrentQuestion from "../atoms/current-question";
 import Answers from "./answers";
-import Progress from "./progress";
+import Progress from "../atoms/progress";
 
 const Game = () => {
   const { questions, currentQuestion, selectAnswer, goNextQuestion } =

@@ -1,6 +1,6 @@
-import Header from "@/components/header";
-import ImageBackground from "@/components/image-background";
-import MaxWidthWrapper from "@/components/max-width-wrapper";
+import Header from "@/components/molecules/header";
+import ImageBackground from "@/components/atoms/image-background";
+import MaxWidthWrapper from "@/components/atoms/max-width-wrapper";
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (

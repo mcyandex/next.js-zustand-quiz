@@ -1,5 +1,5 @@
 "use client";
-import SwitchTheme from "./switch-theme";
+import SwitchTheme from "../atoms/switch-theme";
 import { useQuestionStore } from "@/store/quiz-store";
 import { backgroundColors, cn } from "@/lib/utils";
 import Image from "next/image";

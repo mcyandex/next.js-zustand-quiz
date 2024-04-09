@@ -1,8 +1,8 @@
 "use client";
-import Game from "@/components/game";
-import MaxWidthWrapper from "@/components/max-width-wrapper";
-import Score from "@/components/score";
-import Subjects from "@/components/subjects";
+import Game from "@/components/molecules/game";
+import MaxWidthWrapper from "@/components/atoms/max-width-wrapper";
+import Score from "@/components/atoms/score";
+import Subjects from "@/components/atoms/subjects";
 import { useQuestionStore } from "@/store/quiz-store";
 import { useEffect } from "react";
 
