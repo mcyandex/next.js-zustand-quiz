@@ -32,9 +32,10 @@ export default function Home() {
             </p>
           </MotionDiv>
           <MotionDiv
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex flex-col gap-y-4 justify-center w-full">
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-col gap-y-4 justify-center w-full"
+          >
             <Subjects data={quizzes} />
           </MotionDiv>
         </>
@@ -42,15 +43,23 @@ export default function Home() {
       {selectedQuizz && hasCompleteAll === false && <Game />}
       {hasCompleteAll && (
         <>
-          <div className="flex flex-col xs:gap-3 md:gap-6 h-full lg:mt-20">
+          <MotionDiv
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-col xs:gap-3 md:gap-6 h-full lg:mt-20"
+          >
             <h1 className="xs:text-4xl md:text-5xl font-normal text-dark-blue dark:text-white">
               Quizz Completed!
             </h1>
             <p className="xs:text-4xl md:text-5xl font-bold text-dark-blue dark:text-white">
               You scored...
             </p>
-          </div>
-          <div className="flex flex-col justify-center gap-y-4">
+          </MotionDiv>
+          <MotionDiv
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-col justify-center gap-y-4"
+          >
             <Score />
             <button
               className="w-full bg-purple py-4 px-5 rounded-xl shadow-lg text-white font-semibold text-lg text-center"
@@ -58,7 +67,7 @@ export default function Home() {
             >
               Play Again
             </button>
-          </div>
+          </MotionDiv>
         </>
       )}
     </MaxWidthWrapper>
