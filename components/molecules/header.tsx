@@ -29,10 +29,10 @@ const Header = () => {
               alt="Icon"
               width={30}
               height={30}
-              className="xs:size-5"
+              className="xs:size-5 xl:size-10"
             />
           </div>
-          <p className="text-dark-blue dark:text-white font-bold xs:text-lg sm:text-xl">
+          <p className="text-dark-blue dark:text-white font-bold xs:text-lg sm:text-xl xl:text-3xl">
             {selectedQuizz.title}
           </p>
         </div>

@@ -10,7 +10,7 @@ const MaxWidthWrapper = ({
 }) => {
   return (
     <div
-      className={cn("mx-auto w-full max-w-5xl ", className)}
+      className={cn("mx-auto w-full max-w-5xl xl:text-8xl 2xl:max-w-7xl ", className)}
     >
       {children}
     </div>

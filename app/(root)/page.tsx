@@ -16,7 +16,7 @@ export default function Home() {
   }, [fetchQuizzes]);
 
   return (
-    <MaxWidthWrapper className="grid px-6 grid-cols-1 md:grid-cols-2 gap-10 lg:px-0 relative z-50 h-full">
+    <MaxWidthWrapper className="grid px-6 grid-cols-1 md:grid-cols-2 gap-10 xl:gap-20 lg:px-0 relative z-50 h-full xl:place-content-center ">
       {!selectedQuizz && (
         <>
           <MotionDiv
@@ -24,10 +24,10 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col xs:gap-4 md:gap-10 lg:mt-28"
           >
-            <h1 className="xs:text-4xl md:text-5xl font-normal text-dark-blue dark:text-white">
+            <h1 className="xs:text-4xl md:text-5xl font-normal text-dark-blue dark:text-white xl:text-7xl 2xl:text-9xl">
               Welcome to the <span className="font-bold">Frontend Quizz!</span>
             </h1>
-            <p className="text-gray-navy italic dark:text-light-blue xs:text-sm">
+            <p className="text-gray-navy italic dark:text-light-blue xs:text-sm xl:text-lg">
               Pick a subject to get started.
             </p>
           </MotionDiv>

@@ -14,7 +14,7 @@ const SwitchTheme = () => {
   }, [darkMode]);
 
   return (
-    <div className="flex items-center gap-x-2 md:pr-6 lg:p-0">
+    <div className="flex items-center gap-x-2 md:pr-6 lg:p-0 xl:gap-x-4">
       <Image
         src={
           darkMode
@@ -24,6 +24,7 @@ const SwitchTheme = () => {
         alt="moon"
         width={20}
         height={20}
+        className="xl:size-8"
       />
       <label className="relative inline-flex cursor-pointer items-center">
         <input
@@ -41,6 +42,7 @@ const SwitchTheme = () => {
             ? "/assets/images/icon-moon-light.svg"
             : "/assets/images/icon-moon-dark.svg"
         }
+        className="xl:size-8"
         alt="moon"
         width={20}
         height={20}

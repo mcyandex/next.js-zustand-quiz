@@ -24,7 +24,7 @@ const Game = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-2 lg:px-6 w-full max-h-96 lg:mt-16">
+      <div className="flex flex-col xl:justify-center xl:items-center gap-2 lg:px-6 w-full max-h-96 lg:mt-16 xl:mt-0 xl:max-h-full">
         <AnimatePresence
           initial={false}
           mode="wait"
@@ -38,7 +38,7 @@ const Game = () => {
               key={currentQuestion}
               className="flex flex-col gap-4"
             >
-              <p className="italic xs:text-sm md:text-md text-gray-navy dark:text-light-blue">
+              <p className="italic xs:text-sm md:text-md text-gray-navy dark:text-light-blue xl:text-xl" >
                 Question {currentQuestion + 1} of {questions.length}
               </p>
               <CurrentQuestion data={question} />
@@ -56,7 +56,7 @@ const Game = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="xs:mt-2 lg:mt-auto"
+              className="xs:mt-2 lg:mt-auto xl:mt-20 w-full "
               key={currentQuestion} // Asegúrate de proporcionar una clave única para que React maneje las animaciones correctamente
             >
               <Progress

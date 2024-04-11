@@ -41,7 +41,7 @@ const Answer = ({
         >
           {answerLabels[index]}
         </span>
-        <span>{answer}</span>
+        <span className="xl:text-lg">{answer}</span>
         {isCorrectUserAnswer && selectedAns === answer && (
           <span className="text-green-500 ml-auto">
             <Image
