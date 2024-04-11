@@ -25,7 +25,7 @@ const Subjects = ({ data }: SubjectsProps) => {
           onClick={() => {
             selectQuizz(data.find((q) => q.title === subject.title)!);
           }}
-          className="flex items-center gap-x-4 bg-[#fff] dark:bg-slate py-3 px-4 rounded-xl shadow-lg ring-1 hover:ring-purple transition-all"
+          className="flex items-center gap-x-4 bg-[#fff] dark:bg-slate py-3 px-4 xl:py-4 rounded-xl shadow-lg ring-1 hover:ring-purple transition-all"
         >
           <div
             className="p-2 rounded-lg"

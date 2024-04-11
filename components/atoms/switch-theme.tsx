@@ -24,7 +24,7 @@ const SwitchTheme = () => {
         alt="moon"
         width={20}
         height={20}
-        className="xl:size-8"
+        className="xl:size-7"
       />
       <label className="relative inline-flex cursor-pointer items-center">
         <input
@@ -42,7 +42,7 @@ const SwitchTheme = () => {
             ? "/assets/images/icon-moon-light.svg"
             : "/assets/images/icon-moon-dark.svg"
         }
-        className="xl:size-8"
+        className="xl:size-7"
         alt="moon"
         width={20}
         height={20}

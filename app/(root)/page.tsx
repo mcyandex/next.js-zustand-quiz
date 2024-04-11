@@ -40,7 +40,7 @@ export default function Home() {
           <MotionDiv
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="flex flex-col gap-y-4 justify-center w-full"
+            className="flex flex-col gap-y-4 xl:gap-y-6 justify-center w-full"
           >
             <Subjects data={quizzes} />
           </MotionDiv>
